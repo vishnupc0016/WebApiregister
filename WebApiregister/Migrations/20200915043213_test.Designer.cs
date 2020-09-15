@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApiregister.Models;
 
 namespace WebApiregister.Migrations
 {
     [DbContext(typeof(registerContextClass))]
-    partial class registerContextClassModelSnapshot : ModelSnapshot
+    [Migration("20200915043213_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,9 +29,6 @@ namespace WebApiregister.Migrations
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Password")
-                        .HasColumnType("int");
 
                     b.Property<int>("Phn")
                         .HasColumnType("int");

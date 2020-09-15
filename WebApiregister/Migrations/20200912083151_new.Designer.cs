@@ -9,8 +9,8 @@ using WebApiregister.Models;
 namespace WebApiregister.Migrations
 {
     [DbContext(typeof(registerContextClass))]
-    [Migration("20200912053457_first")]
-    partial class first
+    [Migration("20200912083151_new")]
+    partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace WebApiregister.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApiregister.Models.registration", b =>
+            modelBuilder.Entity("WebApiregister.Model.registration", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,10 +30,10 @@ namespace WebApiregister.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("phn")
+                    b.Property<int>("Phn")
                         .HasColumnType("int");
 
-                    b.Property<string>("username")
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
