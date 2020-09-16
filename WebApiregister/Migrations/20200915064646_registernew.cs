@@ -2,7 +2,7 @@
 
 namespace WebApiregister.Migrations
 {
-    public partial class @new : Migration
+    public partial class registernew : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,8 @@ namespace WebApiregister.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    Phn = table.Column<int>(nullable: false)
+                    Phn = table.Column<int>(nullable: false),
+                    Password = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

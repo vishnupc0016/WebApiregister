@@ -9,8 +9,8 @@ using WebApiregister.Models;
 namespace WebApiregister.Migrations
 {
     [DbContext(typeof(registerContextClass))]
-    [Migration("20200912083151_new")]
-    partial class @new
+    [Migration("20200915064646_registernew")]
+    partial class registernew
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace WebApiregister.Migrations
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Password")
+                        .HasColumnType("int");
 
                     b.Property<int>("Phn")
                         .HasColumnType("int");

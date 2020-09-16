@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiregister.Model;
 using WebApiregister.Models;
+using WebApiregister.utils;
 
 namespace WebApiregister.Controllers
 {
@@ -82,6 +83,12 @@ namespace WebApiregister.Controllers
         [Route("Postregistration")]
         public async Task<ActionResult<registration>> Postregistration(registration registration)
         {
+            EmailSend em = new EmailSend();
+            Random rn = new Random();
+            int Pswd = rn.Next(1000);
+            string PSW = Pswd.ToString();
+            registration.Password = Pswd;
+            em.SendEmail(registration.Email,PSW,"Your Password");
             _context.uregister.Add(registration);
             await _context.SaveChangesAsync();
 
