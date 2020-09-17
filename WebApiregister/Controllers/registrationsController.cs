@@ -11,6 +11,9 @@ using WebApiregister.utils;
 
 namespace WebApiregister.Controllers
 {
+
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class registrationsController : ControllerBase
