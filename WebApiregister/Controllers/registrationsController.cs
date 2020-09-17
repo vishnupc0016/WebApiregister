@@ -88,7 +88,7 @@ namespace WebApiregister.Controllers
             int Pswd = rn.Next(1000);
             string PSW = Pswd.ToString();
             registration.Password = Pswd;
-            em.SendEmail(registration.Email,PSW,"Your Password");
+            em.SendEmail(registration.Email,PSW,"Your password");
             _context.uregister.Add(registration);
             await _context.SaveChangesAsync();
 
